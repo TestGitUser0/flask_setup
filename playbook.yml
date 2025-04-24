@@ -82,7 +82,7 @@
 
     - name: Copy requirements.txt manually
       copy:
-        src: /home/Alma/flask_setup/requirements.txt
+        src: "{{ playbook_dir }}/requirements.txt"
         dest: "{{ app_dir }}/requirements.txt"
       become: yes
 
