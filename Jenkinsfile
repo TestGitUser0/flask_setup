@@ -10,14 +10,12 @@ pipeline{
         }
         stage("Clone Repo"){
             steps {
-                sh 'git clone https://github.com/TestGitUser0/flask_setup.git'
+                sh 'git clone https://github.com/TestGitUser0/flask_setup.git .'
             }
         }
         stage("Build"){
             steps {
-                dir('flask_setup') {
-                    sh 'ansible-playbook -i inventory playbook.yml'
-                }
+                sh 'ansible-playbook -i inventory playbook.yml'
             }
         }
     }
